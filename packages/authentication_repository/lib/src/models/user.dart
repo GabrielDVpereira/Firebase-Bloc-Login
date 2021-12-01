@@ -17,6 +17,8 @@ class User extends Equatable {
     return User(id: '');
   }
 
+  static const empty = User(id: '');
+
   bool get isEmpty => this == User.initial();
   bool get isNotEmpty => this != User.initial();
 
