@@ -1,4 +1,5 @@
 import 'package:authentication_repository/authentication_repository.dart';
+import 'package:bloc_firebase/bloc/app/app_bloc.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,10 +33,11 @@ class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: theme,
-        home: FlowBuilder<AppStatus>(
-          state: context.read<AppBloc>().state.status,
-          onGeneratePages: onGenerateAppViewPages,
-        ));
+      theme: theme,
+      home: FlowBuilder<AppStatus>(
+        state: context.read<AppBloc>().state.status,
+        onGeneratePages: onGenerateAppViewPages,
+      ),
+    );
   }
 }
